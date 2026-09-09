@@ -4,7 +4,7 @@ public class Worker {
 
     private String name;
     private String surname;
-    private static double hourlyRate;
+    public static double hourlyRate;
 
     public Worker(String name, String surname, double hourlyRate) {
         this.name = name;

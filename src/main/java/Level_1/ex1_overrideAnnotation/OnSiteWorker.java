@@ -4,7 +4,7 @@ public class OnSiteWorker extends Worker {
 
     private static double gasoline;
 
-    public OnSiteWorker(String name, String surname, double hourlyRate double gasoline) {
+    public OnSiteWorker(String name, String surname, double hourlyRate, double gasoline) {
         super(name, surname, hourlyRate);
         this.gasoline = gasoline;
     }
