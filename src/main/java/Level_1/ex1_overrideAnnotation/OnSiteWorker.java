@@ -2,11 +2,10 @@ package Level_1.ex1_overrideAnnotation;
 
 public class OnSiteWorker extends Worker {
 
-    private static double gasoline;
+    private static double gasoline = 6.4;
 
-    public OnSiteWorker(String name, String surname, double hourlyRate, double gasoline) {
+    public OnSiteWorker(String name, String surname, double hourlyRate) {
         super(name, surname, hourlyRate);
-        this.gasoline = gasoline;
     }
 
     @Override
