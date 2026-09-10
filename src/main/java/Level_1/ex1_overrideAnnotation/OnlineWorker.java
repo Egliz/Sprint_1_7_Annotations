@@ -14,6 +14,6 @@ public class OnlineWorker extends Worker{
 
     @Override
     public String toString() {
-        return super.toString() + "OnSiteWorker{}";
+        return "OnSite" + super.toString() ;
     }
 }

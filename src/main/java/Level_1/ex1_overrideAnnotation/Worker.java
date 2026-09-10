@@ -7,12 +7,21 @@ public class Worker {
     public static double hourlyRate;
 
     public Worker(String name, String surname, double hourlyRate) {
+        if (name.isBlank() || surname.isBlank()) {
+            throw new IllegalArgumentException("Enter valid values.");
+        }
+        if(hourlyRate <= 0) {
+            throw new IllegalArgumentException("Enter valid values.");
+        }
         this.name = name;
         this.surname = surname;
         this.hourlyRate = hourlyRate;
     }
 
     public double calculateSalary(int hoursWorked){
+        if(hoursWorked <= 0){
+            throw new IllegalArgumentException("Enter valid values");
+        }
         return hoursWorked * hourlyRate;
     }
 

@@ -1,5 +1,7 @@
 package Level_1.ex1_overrideAnnotation;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -10,8 +12,8 @@ public class Main {
         OnSiteWorker onSiteWorker = new OnSiteWorker ("Brad", "Pitt", 35);
 
         int hoursWorked = 160;
-        System.out.println("Worker's salary: " + worker.calculateSalary(hoursWorked));
-        System.out.println("Online worker salary: " + onlineWorker.calculateSalary(hoursWorked));
-        System.out.println("On site worker salary: " + onSiteWorker.calculateSalary(hoursWorked));
+        System.out.println(worker.toString() + "Salary: " + worker.calculateSalary(hoursWorked));
+        System.out.println(onlineWorker.toString() + "Salary: " + onlineWorker.calculateSalary(hoursWorked));
+        System.out.println(onSiteWorker.toString() + "Salary: " + onSiteWorker.calculateSalary(hoursWorked));
     }
 }

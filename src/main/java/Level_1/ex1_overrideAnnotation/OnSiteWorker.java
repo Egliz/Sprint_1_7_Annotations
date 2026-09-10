@@ -2,7 +2,7 @@ package Level_1.ex1_overrideAnnotation;
 
 public class OnSiteWorker extends Worker {
 
-    private static double gasoline = 6.4;
+    private static double gas = 6.4;
 
     public OnSiteWorker(String name, String surname, double hourlyRate) {
         super(name, surname, hourlyRate);
@@ -10,11 +10,11 @@ public class OnSiteWorker extends Worker {
 
     @Override
     public double calculateSalary(int hoursWorked) {
-        return hoursWorked * hourlyRate + gasoline;
+        return hoursWorked * hourlyRate + gas;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "OnSiteWorker{}";
+        return "OnSite " + super.toString();
     }
 }
