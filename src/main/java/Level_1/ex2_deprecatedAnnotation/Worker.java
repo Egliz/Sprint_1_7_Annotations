@@ -25,6 +25,14 @@ public class Worker {
         return hoursWorked * hourlyRate;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
     @Override
     public String toString() {
         return "Worker{" +
