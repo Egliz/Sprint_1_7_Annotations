@@ -7,6 +7,15 @@ public class OnlineWorker extends Worker{
         super(name, surname, hourlyRate);
     }
 
+    public double getINTERNET_PLAN(){
+        return INTERNET_PLAN;
+    }
+
+    @Deprecated
+    public String showOnlineWorker(){
+        return "Name: " + getName() + "surname: " + ", internet plan: " + getINTERNET_PLAN();
+    }
+
     @Override
     public double calculateSalary(int hoursWorked) {
         return hoursWorked * hourlyRate + INTERNET_PLAN;
@@ -16,4 +25,5 @@ public class OnlineWorker extends Worker{
     public String toString() {
         return "OnSite" + super.toString() ;
     }
+
 }
