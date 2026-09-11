@@ -1,7 +1,6 @@
-package Level_1.ex1_overrideAnnotation;
+package Level_1.ex2_deprecatedAnnotation;
 
 public class Worker {
-
     private String name;
     private String surname;
     public static double hourlyRate;
