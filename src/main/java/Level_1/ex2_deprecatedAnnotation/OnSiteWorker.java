@@ -7,6 +7,15 @@ public class OnSiteWorker extends Worker{
         super(name, surname, hourlyRate);
     }
 
+    public double getGas(){
+        return gas;
+    }
+
+    @Deprecated
+    public String showOnSiteWorker(){
+        return "Name: " + getName() + "surname: " + ", internet plan: " + getGas();
+    }
+
     @Override
     public double calculateSalary(int hoursWorked) {
         return hoursWorked * hourlyRate + gas;
