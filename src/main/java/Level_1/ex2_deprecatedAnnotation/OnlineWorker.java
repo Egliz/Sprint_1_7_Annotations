@@ -11,9 +11,12 @@ public class OnlineWorker extends Worker{
         return INTERNET_PLAN;
     }
 
+    /*
+    @deprecated, use toString() instead
+     */
     @Deprecated
     public String showOnlineWorker(){
-        return "Name: " + getName() + "surname: " + ", internet plan: " + getINTERNET_PLAN();
+        return "Name: " + getName() + ", surname: " + getSurname() + ", internet plan: " + getINTERNET_PLAN();
     }
 
     @Override

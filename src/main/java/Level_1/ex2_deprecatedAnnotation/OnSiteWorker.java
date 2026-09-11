@@ -11,9 +11,12 @@ public class OnSiteWorker extends Worker{
         return gas;
     }
 
+    /*
+   @deprecated, use toString() instead
+    */
     @Deprecated
     public String showOnSiteWorker(){
-        return "Name: " + getName() + "surname: " + ", internet plan: " + getGas();
+        return "Name: " + getName() + ", surname: " + getSurname() + ", internet plan: " + getGas();
     }
 
     @Override

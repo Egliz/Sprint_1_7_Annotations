@@ -7,10 +7,10 @@ public class Worker {
 
     public Worker(String name, String surname, double hourlyRate) {
         if (name.isBlank() || surname.isBlank()) {
-            throw new IllegalArgumentException("Enter valid values.");
+            throw new IllegalArgumentException("Enter valid value.");
         }
         if(hourlyRate <= 0) {
-            throw new IllegalArgumentException("Enter valid values.");
+            throw new IllegalArgumentException("Enter valid value.");
         }
 
         this.name = name;
@@ -20,7 +20,7 @@ public class Worker {
 
     public double calculateSalary(int hoursWorked){
         if(hoursWorked <= 0){
-            throw new IllegalArgumentException("Enter valid values");
+            throw new IllegalArgumentException("Enter valid value.");
         }
         return hoursWorked * hourlyRate;
     }
