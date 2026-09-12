@@ -1,5 +1,7 @@
 package Level_2.ex1_jsonSerialization;
 
+//TODO hacer carpeta resources y pones esa ruta en directory
+@CustomAnnotationForJson(directory = "")
 public class Person {
 
     private String name;
