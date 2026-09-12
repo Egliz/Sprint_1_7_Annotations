@@ -10,21 +10,26 @@ public class Main {
     public static void main(String[] args) {
 
         Person person = new Person("Lady", "Gaga", 30);
-        JsonControl jsonControl = new JsonControl(person);
+        JsonControl jsonControl = new JsonControl();
 
-        jsonControl.getDirectoryFromAnnotation(person);
+        String directory = jsonControl.getDirectoryFromAnnotation(person);
+        //metodo para comprobar que el directorio es valido
+        //comprobarDirectorio(directory);
+        if(comprobarDirectorio(directory)) {
+            //serializar(directory);
 
 
-            //metodo para comprobar que el directorio es valido
+        }
 
-            ObjectMapper objectMapper= new ObjectMapper();
-            try {
-                String jsonString = objectMapper.writeValueAsString(person);
-                System.out.println(jsonString);
-            } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
-            }
             //escribir ese JsonString en un archivo
     }
     //TODO metodo para comprobar que el directorio es valido
+    public boolean comprobarDirectorio(String directory) {
+        if(directory == null || directory.isBlank()) {
+            throw new IllegalArgumentException("Directory no valid.");
+            //o false??
+            return false;
+        }
+        return true;
+    }
 }
