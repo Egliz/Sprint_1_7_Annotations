@@ -10,10 +10,11 @@ public class Main {
     public static void main(String[] args) {
 
         Person person = new Person("Lady", "Gaga", 30);
+        JsonControl jsonControl = new JsonControl(person);
 
-        if(person.getClass().isAnnotationPresent(CustomAnnotationForJson.class)){
-            CustomAnnotationForJson customAnnotation = person.getClass().getAnnotation(CustomAnnotationForJson.class);
-            String directory = customAnnotation.directory();
+        jsonControl.getDirectoryFromAnnotation(person);
+
+
             //metodo para comprobar que el directorio es valido
 
             ObjectMapper objectMapper= new ObjectMapper();
@@ -24,9 +25,6 @@ public class Main {
                 throw new RuntimeException(e);
             }
             //escribir ese JsonString en un archivo
-        }
-        else {
-            //
-        }
     }
+    //TODO metodo para comprobar que el directorio es valido
 }
