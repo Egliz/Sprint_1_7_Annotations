@@ -1,10 +1,10 @@
 package Level_2.ex1_jsonSerialization;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import static com.sun.org.apache.xerces.internal.util.DOMUtil.getAnnotation;
+import java.io.IOException;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -15,21 +15,18 @@ public class Main {
             CustomAnnotationForJson customAnnotation = person.getClass().getAnnotation(CustomAnnotationForJson.class);
             String directory = customAnnotation.directory();
             //metodo para comprobar que el directorio es valido
-            //poner que se genere el Json, cambiando outputStream
-            try (FileOutputStream fileOut = new FileOutputStream(directory);
-                 ObjectOutputStream objectOut = new ObjectOutputStream(fileOut)) {
-                 objectOut.writeObject(person);
-                 System.out.println("Serialized object");
-            } catch (IOException e) {
-                System.out.println("Error serializing object:" + e.getMessage());
+
+            ObjectMapper objectMapper= new ObjectMapper();
+            try {
+                String jsonString = objectMapper.writeValueAsString(person);
+                System.out.println(jsonString);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
             }
+            //escribir ese JsonString en un archivo
         }
         else {
             //
         }
-
-
-
     }
-
 }
