@@ -1,6 +1,4 @@
 package Level_2.ex1_jsonSerialization;
-
-
 import java.io.File;
 
 public class Main {
@@ -14,6 +12,7 @@ public class Main {
 
         if(checkDirectory(directory)) {
            jsonControl.serialize(directory, person);
+            System.out.println("Serialized object");
         } else {
             throw new IllegalArgumentException("Directory no valid.");
         }

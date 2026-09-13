@@ -23,11 +23,9 @@ public class JsonControl {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             String jsonString = objectMapper.writeValueAsString(person);
-            System.out.println(jsonString);
             String filePath = directory + File.separator + "SerializedObject.json";
 
-            try (FileWriter fileWriter = new FileWriter(filePath);
-                 ){
+            try (FileWriter fileWriter = new FileWriter(filePath)){
                 fileWriter.write(jsonString);
 
             } catch (IOException e){
