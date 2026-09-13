@@ -18,5 +18,4 @@ public class JsonControl {
             return null;
         }
     }
-
 }

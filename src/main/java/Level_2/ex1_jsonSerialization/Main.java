@@ -13,23 +13,19 @@ public class Main {
         JsonControl jsonControl = new JsonControl();
 
         String directory = jsonControl.getDirectoryFromAnnotation(person);
-        //metodo para comprobar que el directorio es valido
-        //comprobarDirectorio(directory);
+
         if(comprobarDirectorio(directory)) {
-            //serializar(directory);
-
-
-        }
-
-            //escribir ese JsonString en un archivo
-    }
-    //TODO metodo para comprobar que el directorio es valido
-    public boolean comprobarDirectorio(String directory) {
-        if(directory == null || directory.isBlank()) {
+           // serializar desde jsonControl.serialize(directory, person);
+        } else {
             throw new IllegalArgumentException("Directory no valid.");
-            //o false??
+        }
+    }
+
+    public static boolean comprobarDirectorio(String directory) {
+        if(directory == null || directory.isBlank()) {
             return false;
         }
         return true;
     }
 }
+
